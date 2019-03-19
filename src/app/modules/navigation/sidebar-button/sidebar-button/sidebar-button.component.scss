@@ -1,0 +1,15 @@
+@import 'mixins';
+.sidebar_item__button {
+    @include button-reset;
+    padding-left: 32px;
+    padding-right: 8px;
+    text-align: left;
+    font-size: 13px;
+    line-height: 33px;
+    font-weight: 500;
+    color: var(--color-typo-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}

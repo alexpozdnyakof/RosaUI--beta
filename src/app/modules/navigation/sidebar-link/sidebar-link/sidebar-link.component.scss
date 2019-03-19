@@ -1,0 +1,23 @@
+@import 'mixins';
+.sidebar-link__button {
+    @include button-reset;
+    font-size: 13px;
+    line-height: 33px;
+    color: var(--color-typo-primary);
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    padding-left: 36px;
+    padding-right: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    font-weight: 600;
+}
+
+.sidebar_item_active {
+    background-color: #F9F7F7;
+    //font-weight: 500;
+}

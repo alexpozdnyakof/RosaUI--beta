@@ -1,0 +1,4 @@
+.radio__container
+    input(type="radio" class="radio__radio" '[name]'="name"   '[formControl]'="controlOptions" '[value]'="value" id="{{index}}" '(blur)' = "onTouched()" '(change)'="onChange($event.target.value)" #radio)
+    label(for="{{index}}")
+        ng-content

@@ -1,0 +1,47 @@
+.handlebar {
+    width: 496px;
+    height: 100vh;
+    position: static;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    box-shadow: -3px 0 55px rgba(0, 0, 0, .08);
+}
+
+.control_close {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #e3e3e3;
+    h1 {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: #131313;
+        margin: auto 0;
+    }
+    .closeHandlebar {
+        all: unset;
+        cursor: pointer;
+        i {
+            font-size: 16px;
+            line-height: 24px;
+            color: #838383;
+            transition: color .15s ease-in;
+        }
+        &:focus,
+        &:hover {
+            i {
+                color: #383838;
+                transition: color .15s ease-in;
+            }
+        }
+    }
+}
+
+.handlebar-content {
+    padding: 24px;
+}

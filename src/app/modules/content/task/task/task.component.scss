@@ -1,0 +1,38 @@
+    .task-title {
+        margin-bottom: 4px;
+        span {
+            display: block;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #1b1b1b;
+        }
+    }
+    
+    .task-description {
+        margin-bottom: 8px;
+        span {
+            font-size: 14px;
+            line-height: 20px;
+            color: #464648;
+        }
+    }
+    
+    .task-subitem {
+        display: flex;
+        align-items: center;
+    }
+    
+    .task {
+        transition: box-shadow 100ms, transform 100ms, opacity 100ms, border-color 100ms;
+    }
+    
+    .task-duedate {
+        margin-left: 12px;
+        span {
+            font-size: 12px;
+            line-height: 12px;
+            color: #76767c;
+        }
+    }

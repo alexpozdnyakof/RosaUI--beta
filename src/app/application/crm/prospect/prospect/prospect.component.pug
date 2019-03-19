@@ -1,0 +1,62 @@
+
+.pane-main 
+  .pane-header.padding-16-32
+    h1 {{prospect?.name | typograph}}
+    p.subheader {{prospect?.main.industry}}
+  .pane-secondary 
+    .text-block-stage
+      .caption номер клиента:
+      .value N211288
+    .text-block-stage
+      .caption терофис:
+      .value {{prospect?.main.office}}
+    .text-block-stage
+      .caption группа компаний:
+      .value {{isEmptyChange(prospect?.main.company_group)}}
+    .text-block-stage
+      .caption последний контакт:
+      .value {{prospect?.checkpoints.contact | rosaDate}}
+.pane-group
+  .pane-row
+    .pane-main.padding-16-20
+      .content-group
+        h3.text-color_header-secondary.margin-top_0.margin-bottom_12.font-size_13.line-height_24.uppercase.letter-spacing_03.font-weight__700 Основная информация
+        .section.margin-bottom_12
+          .text-block-list.margin-bottom_4
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 ИНН:
+            .text-color_text-primary.font-size_14.line-height_20 {{prospect?.main.inn}}
+          .text-block-list.margin-bottom_4
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 ОГРН:
+            .text-color_text-primary.font-size_14.line-height_20 {{prospect?.main.ogrn}}
+          .text-block-list.margin-bottom_4
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 Денежный оборот:
+            .text-color_text-primary.font-size_14.line-height_20 {{prospect?.money.count | number}} руб. за {{prospect?.money.period}} год.
+        .section.margin-bottom_12
+          h3.text-color_header-secondary.margin-top_0.margin-bottom_8.font-size_12.line-height_24.uppercase.letter-spacing_03.font-weight__700 Коды ОКВЭД
+          .text-color_text-primary.font-size_14.line-height_20.margin-bottom_2.font-weight__600('*ngFor'="let code of okved") {{code}}
+        .section.margin-bottom_12
+          h3.text-color_header-secondary.margin-top_0.margin-bottom_8.font-size_12.line-height_24.uppercase.letter-spacing_03.font-weight__700 Прочие коды
+          .text-block-list.margin-bottom_4('*ngFor'="let code of prospect?.codes | keyvalue") 
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 {{code.key | codeKey}}:
+            .text-color_text-primary.font-size_14.line-height_20 {{ isEmptyChange(code.value)}}
+    .pane-main.padding-16-20
+      .content-group
+        h3.text-color_header-secondary.margin-top_0.margin-bottom_12.font-size_13.line-height_24.uppercase.letter-spacing_03.font-weight__700 Контактная информация
+        .section.margin-bottom_12
+          .text-block-list.margin-bottom_4('*ngFor'="let phone of phones")
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 Телефон:
+            .text-color_text-primary.font-size_14.line-height_20 {{phone.phone}}
+          .text-block-list.margin-bottom_4
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 Адрес регистрации:
+            .text-color_text-primary.font-size_14.line-height_20 {{isEmptyChange(prospect?.address.registration)}}
+          .text-block-list.margin-bottom_4
+            .text-color_text-tertiary.font-size_13.line-height_20.font-weight__600 Адрес фактический:
+            .text-color_text-primary.font-size_14.line-height_20 {{isEmptyChange(prospect?.address.fact)}}
+  .pane-main
+    .tab-header.padding-0-24
+      .tabs-container
+        button.tab.tab__active  Активности
+        button.tab Аналитика
+
+
+

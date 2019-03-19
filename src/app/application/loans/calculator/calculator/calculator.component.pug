@@ -1,0 +1,76 @@
+
+.calculator-wrapper
+  .pane
+    .calculator-grid
+      .calculator-form.col-7
+        .calculator-header
+          h1 Кредитный калькулятор
+        form('[formGroup]'="calculator")
+          <!-- Checkbox segment -->
+          rosa-form-group
+            label(rosaLabel form-group="label") Сегмент
+            rosa-radio(form-group="control", '[controlOptions]'="calculator.controls['segment']" '[name]'="'segment'" '[value]'="'small'") Малый бизнес
+            rosa-radio(form-group="control", '[controlOptions]'="calculator.controls['segment']" '[name]'="'segment'" '[value]'="'micro'") Микро-бизнес
+          <!-- Checkbox sale -->
+          rosa-form-group
+            label(rosaLabel form-group="label") Добросовестный клиент
+            rosa-checkbox(form-group="control", '[value]'="'decent'" '[name]'="'decent'" '[controlOptions]'="calculator.controls['decent']")
+              ng-container(checkbox-group="label") Добавить скидку 0.3%
+          <!-- Checkbox type -->
+          rosa-form-group
+            label(rosaLabel labelSize="medium"  form-group="label") Тип кредита
+            rosa-radio(form-group="control", '[controlOptions]'="calculator.controls['type']" '[name]'="'type'" '[value]'="'credit'") Кредит
+            rosa-radio(form-group="control", '[controlOptions]'="calculator.controls['type']" '[name]'="'type'" '[value]'="'overdraft'") Овердрафт
+            rosa-hint(form-group="hint") Для оведрафта срок не указывается
+          <!-- Number Range -->
+          rosa-form-group('[layout]'="'form-group_group'")
+            label(rosaLabel form-group="label") Срок кредита (от {{this.range.min}} до {{this.range.max}} мес.)
+            .input__suffix-group(form-group="control")
+              input(type="number" rosaInput '[formControl]'="calculator.controls['range']" '[min]'="3" '[max]'="84")
+              .input-suffix мес.
+            rosa-hint(form-group="hint") При сроке более 60 мес. указывается срок 84 мес.
+          <!-- SELECT LIMIT -->
+          rosa-form-group('*ngIf'="amount")
+            label(rosaLabel form-group="label") Лимит
+            rosa-iconinput(form-group="control" '[position]'="'right'" '[icon]'="'dropdown'")
+              select(rosaSelect, '[formControl]'="calculator.controls['amount']")
+                option('*ngFor'="let col of amount | keyvalue let i = index;" '[selected]'="i===0" '[ngValue]'="col.key") {{col.value}}
+            rosa-hint(form-group="hint") Для оведрафта лимит не указывается
+          <!-- SELECT Colllateral -->
+          rosa-form-group('*ngIf'="collateral")
+            label(rosaLabel form-group="label") Обеспечение
+            rosa-iconinput(form-group="control" '[position]'="'right'" '[icon]'="'dropdown'")
+              select(rosaSelect, '[formControl]'="calculator.controls['collateral']")
+                option('*ngFor'="let col of collateral | keyvalue let i = index;" '[selected]'="i===0"  '[ngValue]'="col.key") {{col.value}}
+            rosa-hint(form-group="hint") *&nbsp;Доля кредита/лимита, обеспеченного недвижимостью/поручительством Фонда
+
+      .calculator-result.col-5
+        .calculator-version
+          span('*ngIf'="lastVersion$ | async as lastVersion") Действующие ставки от {{lastVersion | date: 'dd MMM'}}
+          .divider
+          .calculator-version_previous 
+            form('[formGroup]'="version")
+              rosa-switch('[formControl]'="version.controls['toggle']" '*ngIf'="prevVersion$ | async as prevVersion") Рассчитать по версии от {{prevVersion | date: 'dd MMM'}}
+            rosa-hint нажмите чтобы рассчитать по ставкам прошлого периода
+        .calculator-result_card
+          h3 Итоговая ставка
+          .result_value
+            span.key FTP
+            span.value {{ftp}}%
+          .result_value
+            span.key Вал.маржа
+            span.value {{gross}}%
+          .result_value
+            span.key Скидка
+            span.value {{decent}}%
+          .divider
+          .result_value.summary
+            span.key Итого
+            span.value {{score}}%
+          .result_save-form
+            h3.saveform-header Сохранить рассчет
+            form('[formGroup]'="history")
+              input(type="text" rosaInput '[formControl]'="history.controls['note']" placeholder="Название клиента")
+              rosa-button('[button]'="'secondary'" '[size]'="'inline'"  type="'submit'" form-group="control" #saveHistory '(click)'="saveCalculateResult()") Сохранить
+        .calculator-history('*ngIf'="history$ | async as history")
+          rosa-story-card('*ngFor'="let story of history let i = index" '[story]'="story" '(copied)'="showToastMessage($event)")

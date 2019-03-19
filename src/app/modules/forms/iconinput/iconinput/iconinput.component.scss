@@ -1,0 +1,47 @@
+.icon__dropdown {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    svg {
+        width: 100%;
+        height: 100%;
+        display: inline-block
+    }
+}
+
+.icon__date {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    svg {
+        width: 100%;
+        height: 100%;
+        display: inline-block
+    }
+}
+
+.icon-input_container {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.icon__right {
+    right: 12px;
+}
+
+.icon__left {
+    left: 8px;
+}
+
+.input {
+     :host {
+        .rosa-input {
+            padding-left: 28px !important;
+        }
+    }
+}

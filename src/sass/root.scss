@@ -1,0 +1,99 @@
+//----------------COLORS----------------//
+:root {
+    --c-background: #f8f8f8;
+    --c-text: #282423;
+    --c-text-tertiary: #808080;
+}
+
+:root {
+    --color-primary: #e60028;
+    --color-action: #e60028;
+    --color-selection: #ffeaee;
+    --color-hover: #cf0024;
+    --color-border: #d8d8d8;
+    --color-line: #e8e8e8;
+    --color-stripe: #eae9e9;
+    --color-ghost: #c4c4c4;
+    --color-default: #fff;
+    --color-tone: #282423;
+    --color-soft: #fafafa;
+    --color-success: #0c9;
+    --color-alert: #f33;
+    --color-warning: #f90;
+    --color-normal: #dde3e5;
+    --color-system: #778a9b;
+    --color-typo-primary: #464648;
+    --color-typo-header: #282423;
+    --color-typo-secondary: #4C4948;
+    --color-typo-list: #5A5858;
+    --color-typo-tertiary: #8B8A88;
+    --color-typo-ghost: #8B8A88;
+    --color-typo-disable: #A6A4A4;
+    --color-typo-success: #00985f; //00A378
+    --color-typo-warning: #f90;
+    --color-typo-alert: #f33;
+    //--color-link: #0080f0;
+    --color-link: #0080ff;
+    //--color-link: #2687FB;
+    //--color-link-external: #2687FB;
+    --color-link-external: #2687FB;
+    --color-link-minor: #807D7D;
+    --color-link-hover: #c00;
+    --color-inverse: #282423;
+    --color-border-control-alt: #d4d4d4;
+    --color-border-control: #d9d8d8;
+    --color-default-ios: #fff;
+    --color-default-android: #fafafa;
+    --color-disable: rgba(0, 0, 0, .08);
+    --color-typo-inverse: #fff;
+    --color-typo-income: #04a404;
+    --color-typo-letter: red;
+    --color-background-500: #f5f5f5;
+    --color-background-200: #f2f2f2;
+}
+
+//----------------TYPOGRAPHY----------------//
+:root {
+    --size-typo-xs: 12px;
+    --size-typo-s: 13px;
+    --size-typo-m: 14px;
+    --size-typo-l: 16px;
+    --size-typo-h: 18px;
+    --size-typo-xl: 20px;
+    --size-typo-xxl: 24px;
+    --size-typo-xxxl: 32px;
+    --size-typo-xxxxl: 40px;
+    --line-height-typo-xs: 16px;
+    --line-height-typo-s: 20px;
+    --line-height-typo-m: 24px;
+    --line-height-typo-l: 24px;
+    --line-height-typo-h: 24px;
+    --line-height-typo-xl: 28px;
+    --line-height-typo-xxl: 32px;
+    --line-height-typo-xxxl: 40px;
+    --line-height-typo-xxxxl: 48px;
+}
+
+//----------------SPACING----------------//
+:root {
+    --space-xxxs: 2px;
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-s: 12px;
+    --space-m: 16px;
+    --space-l: 20px;
+    --space-xl: 24px;
+    --space-xxl: 32px;
+    --space-xxxl: 40px;
+    --space-xxxxl: 48px;
+    --space-xxxxxl: 56px;
+    --space-xxxxxxl: 64px;
+}
+
+.header-xs-upper {
+    font-size: var(--size-typo-xs);
+    line-height: var(--line-height-typo-m);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}

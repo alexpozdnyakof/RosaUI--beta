@@ -1,0 +1,21 @@
+.calculator-wrapper
+  .pane
+    .calculator-grid
+      .calculator-config-nav.col-3
+        a.nav-item(href="") Ставка FTP
+        a.nav-item(href="") Валовая маржа
+      .calculator-config-workspace.col-9
+        h1 Конфигурация калькулятора
+        form('[formGroup]'="parseForm" '(ngSubmit)'="onSubmit()")
+          rosa-form-group()
+            label(rosaLabel form-group="label") Ставки FTP
+            textarea(form-group="control"  '[formControl]'="parseForm.controls['parser']" rosaInput  fieldSize="textarea")
+            rosa-hint(form-group="hint") Для оведрафта лимит не указывается
+          rosa-form-group
+            label(rosaLabel labelSize="medium"  form-group="label") Срок действия ставки
+            rosa-iconinput(form-group="control" '[position]'="'right'")
+              input(rosaInput rosaDatepickerInput  #dateInput '[formControl]'="parseForm.controls['date']")
+          rosa-form-group
+            rosa-button('[className]'="'red size__m padding__l'"  type="'submit'" form-group="control" #updateFtp) Обновить ставки
+        //div {{parseForm.value | json}}
+

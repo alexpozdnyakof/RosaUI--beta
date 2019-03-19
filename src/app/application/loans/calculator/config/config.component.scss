@@ -1,0 +1,118 @@
+@import 'mixins';
+@import 'grid';
+.pane {
+    width: 100%;
+    background: #FFF;
+    border-radius: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+    //box-shadow: 0 1px 0 rgba(0, 0, 0, .07), 0 1px 4px rgba(0, 0, 0, .05), 0 5px 10px rgba(0, 0, 0, .08);
+    // box-shadow: 0 7px 14px 0 rgba(70, 70, 72, .1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+}
+
+.calculator-grid {
+    display: flex;
+}
+
+.calculator-config-nav {
+    border-right: 1px solid #eaeeef;
+    background: #fdfdfd;
+    padding: 16px 0;
+}
+
+.calculator-wrapper {
+    margin: 48px auto;
+    // height: calc(100vh - 64px - 32px);
+    position: relative;
+    width: 1080px;
+}
+
+.calculator-config-workspace {
+    padding: 32px 48px;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #1b1b1b;
+    margin: 0;
+}
+
+form {
+    margin-top: 32px;
+}
+
+.nav-item {
+    padding: 16px 32px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #1b1b1b;
+    text-decoration: none;
+    display: block;
+    &:hover {
+        transition: all .3s ease;
+        background-color: #f2f2f2;
+    }
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-11 {
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+}
+
+.col-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.col-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.col-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.col-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}

@@ -1,0 +1,7 @@
+div(class='form-group {{size}}')
+  .form-group__label
+    ng-content(select="[form-group=label]")
+  div(class='form-group__control {{layout}}')
+    ng-content(select="[form-group=control]")
+  div(class='form-group__hint')
+    ng-content(select="[form-group=hint]")

@@ -1,0 +1,11 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+:host {
+    width: auto;
+    padding: 4px 12px;
+    background-color: #3d3837;
+    display: inline-block;
+    position: relative;
+    color: #dcdcdc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .12);
+}

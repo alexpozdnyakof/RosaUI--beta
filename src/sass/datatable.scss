@@ -1,0 +1,126 @@
+body .ui-table .ui-table-thead>tr>th {
+    padding: 6px 8px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #d1d1d1;
+    border-left: 1px solid #dde1e3;
+    border-right: 1px solid transparent;
+    color: var(--text-main);
+    background-color: #f5f5f5;
+    font-weight: normal;
+    text-align: left;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body .ui-table {
+    font-size: 13px;
+    line-height: 20px;
+    font-family: "Graphik LCG";
+    color: var(--text-main);
+}
+
+body .ui-table table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: none;
+    border-spacing: 0;
+    width: 100%;
+    white-space: nowrap;
+}
+
+table,
+td,
+th {
+    border-collapse: collapse;
+}
+
+body .ui-table .ui-table-tbody>tr:nth-child(even) {
+    background-color: #FFF;
+}
+
+body .ui-table .ui-table-tbody>tr {
+    background: #ffffff;
+    color: var(--text-main);
+    border-bottom: 1px solid #dde1e3;
+    min-width: 100%;
+}
+
+body .ui-table .ui-table-tbody>tr>td {
+    padding: 6px 8px;
+    background: inherit;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid #dde1e3;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body .ui-table .ui-editable-column input {
+    font-size: 13px;
+    line-height: 20px;
+    width: 100%;
+    left: 0;
+    padding-left: 8px;
+    border: 1px solid transparent;
+    top: 0;
+    height: 32px;
+    position: absolute;
+    font-family: inherit !important;
+    &:active {
+        border: 1px solid #005AD0;
+    }
+    &:focus {
+        border: 1px solid #005AD0;
+    }
+}
+
+body .ui-widget {
+    font-family: "Graphik LCG";
+    font-size: 13px;
+    text-decoration: none;
+}
+
+body .ui-dropdown {
+    background: #ffffff;
+    position: absolute;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+body .ui-dropdown .ui-dropdown-label {
+    padding-right: 4px;
+    ;
+}
+
+body .ui-inputtext {
+    font-size: 13px;
+    color: var(--text-main);
+    padding: 0;
+    background: #ffff;
+    border: 1px solid transparent;
+    transition: border-color 0.2s
+}
+
+.ui-inputtext {
+    margin: 0;
+    outline: medium none;
+    padding: 0;
+}
+
+body .ui-widget {
+    font-family: "Graphik LCG";
+    font-size: 13px;
+    text-decoration: none;
+}
+
+body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
+    border-color: #007ad9;
+    outline: 0 none;
+    box-shadow: none;
+}

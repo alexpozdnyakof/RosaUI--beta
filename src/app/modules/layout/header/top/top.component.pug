@@ -1,0 +1,10 @@
+.header-pane
+  .header-pane__content
+    .pane-left
+      .pane-left__nav
+        ng-content(select="[top-zone=top-nav]")
+    .pane-right
+      .pane-right__search
+        ng-content(select="[top-zone=top-search]")
+      .pane-right__user
+        ng-content(select="[top-zone=top-user]")

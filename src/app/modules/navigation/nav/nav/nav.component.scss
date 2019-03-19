@@ -1,0 +1,28 @@
+@import 'mixins';
+.top-nav {
+    padding: 0 16px;
+}
+
+.top-nav_item {
+    color: #dadada;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 64px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all .15s ease;
+    //border-top: 2px solid transparent;
+    user-select: none;
+    &:first-child {
+        padding-left: 0 !important;
+    }
+    &:hover {
+        opacity: .8;
+        //border-color: #e5e5e5!important;
+        transition: all .15s ease;
+    }
+    &.active {
+        color: #e60028;
+        //border-color: var(--color-hover) !important;
+    }
+}

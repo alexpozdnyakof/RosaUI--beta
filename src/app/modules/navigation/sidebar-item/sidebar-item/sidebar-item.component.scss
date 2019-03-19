@@ -1,0 +1,18 @@
+.sidebar_item {}
+
+.sidebar_item_active {
+    background-color: var(--color-background-200);
+     ::ng-deep {
+        rosa-sidebar-link {
+            font-weight: 500;
+        }
+    }
+}
+
+.sidebar_sub-items {
+    padding-bottom: 8px;
+}
+
+.sidebar_sub-items:empty {
+    display: none;
+}

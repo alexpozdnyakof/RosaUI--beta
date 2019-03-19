@@ -1,0 +1,80 @@
+.portfolio-wrapper.portfolio-wrapper_with-sidebar
+  //rosa-sidebar
+    rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+      rosa-sidebar-button(side-item-role="button" '(click)'="loadPage(1)") Мой портфель
+    rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+      rosa-sidebar-button(side-item-role="button") Избранное
+    rosa-sidebar-item(sidebar-role="rosa-sidebar-nav" '*ngIf'="(groups$ | async) as groups;")
+      rosa-sidebar-button(side-item-role="button") Списки проспектов
+      rosa-sidebar-link(side-item-role="sub", '*ngFor'="let group of groups", '(click)'="loadPage(1, group.id, group.name)", '[isActive]'="state$.id === group.id") {{group.name}}
+    rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+      rosa-sidebar-button(side-item-role="button") Архивированные
+
+  .data-list__container
+    .data-list__body
+      .page-header
+        .breadcrumbs
+          span.breadcrumb Продажи
+          .breadcrumb__arrows
+           //svg(id="packages--wrike_components--iconset--icon-arrow-right" viewBox="0 0 16 16" width="100%" height="100%")
+            path(d="M6.5 4.5l4 4L11 8l-.5-.5L7 4l-.5.5zm0 7l.5.5 3.5-3.5L10 8l-3.5 3.5z")
+          span.breadcrumb {{state$?.name}}
+        h1('*ngIf'="state$") {{state$?.name}}
+      cdk-table('[dataSource]'="dataSource")
+        ng-container('cdkColumnDef'="padding-left")
+          cdk-header-cell('*cdkHeaderCellDef', class='col-padding')
+            rosa-list-header-cell()
+          cdk-cell('*cdkCellDef'="let element" class='col-padding')
+            rosa-list-body-cell
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="valuation")
+          cdk-header-cell('*cdkHeaderCellDef', class='col-valuation')
+            rosa-list-header-cell() Вес
+          cdk-cell('*cdkCellDef'="let element" '(click)'="onRowClicked(element)", class='col-valuation')
+            rosa-list-body-cell {{element.valuation}}
+          cdk-footer-cell('*cdkFooterCellDef')
+            rosa-list-body-cell Вес
+        ng-container('cdkColumnDef'="name")
+          cdk-header-cell('*cdkHeaderCellDef')
+            rosa-list-header-cell Наименование
+          cdk-cell('*cdkCellDef'="let element")
+            rosa-list-body-cell {{element.name | typograph}}
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="activity")
+          cdk-header-cell('*cdkHeaderCellDef')
+            rosa-list-header-cell Активность
+          cdk-cell('*cdkCellDef'="let element")
+            rosa-list-body-cell {{element?.activity_date | rosaDate}} {{element?.activity_last}}
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="industry")
+          cdk-header-cell('*cdkHeaderCellDef')
+            rosa-list-header-cell  Отрасль
+          cdk-cell('*cdkCellDef'="let element")
+            rosa-list-body-cell {{element?.industry}}
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="bank")
+          cdk-header-cell('*cdkHeaderCellDef')
+            rosa-list-header-cell  Банк
+          cdk-cell('*cdkCellDef'="let element")
+            rosa-list-body-cell {{element?.bank_pro | typograph}}
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="budget")
+          cdk-header-cell('*cdkHeaderCellDef')
+            rosa-list-header-cell Бюджет
+          cdk-cell('*cdkCellDef'="let element")
+            rosa-list-body-cell {{element?.budget_year | currency:'RUB'}}
+          cdk-footer-cell('*cdkFooterCellDef')
+        ng-container('cdkColumnDef'="padding-right")
+          cdk-header-cell('*cdkHeaderCellDef', class='col-padding')
+            rosa-list-header-cell()
+          cdk-cell('*cdkCellDef'="let element" class='col-padding')
+            rosa-list-body-cell
+          cdk-footer-cell('*cdkFooterCellDef')
+        cdk-header-row('*cdkHeaderRowDef'="displayedColumns; sticky: true")
+          .data-list-header
+        //    ng-scrollbar  
+        cdk-row('*cdkRowDef'="let row; columns: displayedColumns;" '(click)'="onRowClicked(row)")
+          .data-list-body
+      .footer
+        .pagination('*ngIf'="state$")
+          rosa-pagination('*ngFor'="let page of pagesCount(state$.pages); let i = index", '(click)'="loadPage(i+1, state$.id)", '[isActive]'="state$.current === i+1") {{i+1}}

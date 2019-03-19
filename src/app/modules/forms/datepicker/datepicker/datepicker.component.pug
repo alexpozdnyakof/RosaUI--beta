@@ -1,0 +1,17 @@
+.popup-container
+  .calendar
+    .header
+      .calendar-nav-previous-month
+        button(class="button is-text" '(click)'="changeNavMonth(-1)" '[disabled]'="!canChangeNavMonth(-1)")
+          .icon.arrow-left
+      ng-container {{navDate.format('MMMM YYYY')}}
+      .calendar-nav-next-month
+        button(class="button is-text" '(click)'="changeNavMonth(1)" '[disabled]'="!canChangeNavMonth(1)")
+          .icon.arrow-right
+    ul.weekdays
+      li('*ngFor'="let day of weekDaysHeaderArr")
+        abbr {{day}}
+    ul.day-grid
+      li('*ngFor'="let day of gridArr" '[ngClass]'="{'selected': selectedDay === day}" class="calendar-date" '[class.is-disabled]'="!day.available")
+        button('*ngIf'="day.value !== 0" class="date-item button__day" '(click)'="selectDay(day)") {{day.value}}
+        button('*ngIf'="day.value === 0" class="date-item button__day")

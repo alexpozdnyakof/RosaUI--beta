@@ -1,0 +1,69 @@
+.textarea__container {
+    position: relative;
+}
+
+.textarea__field {
+    width: 100%;
+    color: var(--color-typo-primary);
+    font-size: var( --size-typo-m);
+    font-weight: 400;
+    box-shadow: none;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: var(--space-xxxs);
+    border-color: var(--color-border-control);
+    background: var(--color-default);
+    outline: none;
+    height: calc(8px * 16);
+    transition: all 0.15s ease;
+    &:focus,
+    &:active {
+        outline: none;
+        transition: all 0.15s ease;
+        border-color: var(--color-border-control-alt);
+        box-shadow: 0 0 0 2px var(--color-border-control-alt);
+    }
+    &:disabled {
+        background-color: var(--color-soft);
+        color: var(--color-typo-tertiary);
+    }
+}
+
+.size-small {
+    padding: 0 4px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.size-default {
+    padding: 0 8px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.size-large {
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.state_default {
+    border-color: var(--color-border-control);
+}
+
+.state_error {
+    border: 1px solid var(--color-error) !important;
+}
+
+.state_success {
+    border: 1px solid var(--color-success) !important;
+}
+
+.state_dark {
+    border: 1px solid var(--color-border-control-alt) !important;
+}
+
+.state_disabled {
+    background-color: var(--color-soft) !important;
+    color: var(--color-typo-tertiary) !important;
+}

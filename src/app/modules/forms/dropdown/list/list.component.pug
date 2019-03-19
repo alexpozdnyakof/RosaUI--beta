@@ -1,0 +1,5 @@
+.dropdown-list__container
+  div(class='dropdown-list__pane' '[ngClass]'="isOpen && 'open'")
+    .dropdown-list__inner
+      //ng-scrollbar
+      button(class='dropdown-list__item' '*ngFor'="let value of values" '[ngClass]'="value === selected && 'active'" '(click)'="setValue(value)") {{value}}{{suffix}}

@@ -1,0 +1,94 @@
+@import 'mixins';
+.dropdown__container {
+    position: relative;
+    cursor: pointer !important;
+}
+
+.dropdown__button {
+    @include button-reset;
+    width: 100%;
+    color: var(--color-typo-primary);
+    font-size: var( --size-typo-m);
+    font-weight: 400;
+    box-shadow: none;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: var(--space-xxxs);
+    border-color: var(--color-border-control);
+    background: var(--color-default);
+    cursor: pointer !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    transition: all 0.15s ease;
+    text-align: left;
+    &:hover {
+        background: var(--color-background-200);
+        border-color: var(--color-border-control-alt);
+    }
+    &:focus,
+     :active {
+        outline: none;
+        transition: all 0.15s ease;
+        border-color: var(--color-border-control-alt);
+        //box-shadow: 0 0 0 2px #c4c4c4;
+    }
+    &:disabled {
+        background-color: var(--color-soft);
+        color: var(--color-typo-tertiary);
+    }
+    &.active {
+        transition: border-color 0.15s ease;
+        background: var(--color-background-200);
+        border-color: var(--color-border-control-alt);
+        &:hover {
+            background: var(--color-background-200);
+            border-color: var(--color-border-control-alt);
+        }
+    }
+    svg {
+        transform: scale(1.3415);
+    }
+}
+
+.size-small {
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.size-default {
+    padding-left: 12px;
+    padding-right: 8px;
+    height: 32px;
+    line-height: 30px;
+}
+
+.size-large {
+    padding-left: 12px;
+    padding-right: 8px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.state_default {
+    border-color: var(--color-border-control);
+}
+
+.state_error {
+    border: 1px solid var(--color-error) !important;
+}
+
+.state_success {
+    border: 1px solid var(--color-success) !important;
+}
+
+.state_dark {
+    border: 1px solid var(--color-border-control-alt) !important;
+}
+
+.state_disabled {
+    background-color: var(--color-soft) !important;
+    color: var(--color-typo-tertiary) !important;
+}

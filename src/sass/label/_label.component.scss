@@ -1,0 +1,21 @@
+.rosa-label {
+    letter-spacing: 0;
+    color: #1b1b1b;
+    // margin-bottom: 8px;
+    display: inline-block;
+    &.disabled {
+        opacity: .5;
+    }
+}
+
+.rosa-label__m {
+    font-weight: 600;
+    font-size: var(--size-typo-m);
+    line-height: var(--line-height-typo-s);
+}
+
+.rosa-label__lg {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}

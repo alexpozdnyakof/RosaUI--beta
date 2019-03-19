@@ -1,0 +1,23 @@
+.list-header-cell {
+    height: 40px;
+    padding: 12px 12px 11px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    line-height: 0;
+    display: flex;
+    span {
+        font-size: 12px;
+        line-height: 1;
+        display: inline-block;
+        color: var(--color-typo-primary);
+        font-weight: bold;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}

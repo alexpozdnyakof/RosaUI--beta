@@ -1,0 +1,197 @@
+    @import 'mixins';
+    @import 'grid';
+    .data-list__container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .data-list__body {
+        width: 100%;
+        height: 100%;
+        height: calc(100vh - 80px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #FFF;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .16), 0 0 1px 0 rgba(0, 0, 0, .16);
+        border-radius: 3px;
+    }
+    
+    .cdk-column-budget {
+        text-align: right;
+    }
+    
+    .cdk-header-row,
+    .cdk-row {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .data-list-header,
+    .data-list-body,
+    .cdk-header-row,
+    .cdk-row {
+        position: relative;
+        background-color: #FFF;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 20px 20.83333333% 64px 20.83333333% 12.5% 25% 12.5% 20px;
+    }
+    
+    .list-toggle {
+        @include button-reset;
+        font-size: 12px;
+        line-height: 20px;
+        display: inline-block;
+        letter-spacing: .2px;
+        font-weight: 500;
+        color: var(--color-typo-secondary);
+        text-align: left;
+        text-transform: lowercase;
+        outline: none !important;
+        transition: all .3s ease-in;
+        &:hover {
+            color: var(--color-primary);
+            outline: none !important;
+            svg {
+                g {
+                    stroke: var(--color-primary);
+                }
+            }
+        }
+        &:active,
+         :focus {
+            outline: none !important;
+        }
+        .list-toggle__inner {
+            display: flex;
+            align-items: center;
+        }
+        svg {
+            margin-right: 4px;
+            display: inline-block;
+            margin-top: 3px;
+            g {
+                transition: all .3s ease-in;
+                stroke: var(--color-typo-tertiary);
+            }
+        }
+    }
+    
+    .cdk-row {
+        &:hover {
+            background-color: #f5f5f5;
+        }
+        &__active {
+            background-color: #f2f2f2;
+        }
+    }
+    
+    .col-valuation {
+         ::ng-deep {
+            .list-body-cell {
+                justify-content: center;
+                span {
+                    background-color: #e8ebeb;
+                    border-radius: 3px;
+                    margin: auto;
+                    line-height: 24px !important;
+                    width: 24px !important;
+                    text-align: center;
+                }
+            }
+            .list-header-cell {
+                justify-content: center;
+            }
+        }
+    }
+    
+    .cdk-column-name {
+         ::ng-deep {
+            .list-body-cell {
+                span {
+                    font-weight: 500 !important;
+                    //color: #1683fa !important;
+                }
+            }
+        }
+    }
+    
+    .cdk-column-budget {
+         ::ng-deep {
+            .list-body-cell,
+            .list-header-cell {
+                justify-content: flex-end;
+                font-variant-numeric: tabular-nums;
+            }
+        }
+    }
+    
+    .footer {
+        bottom: 0px;
+        position: sticky;
+        z-index: 100;
+        background-color: #FFF;
+        border-top: 1px solid #d4d4d4;
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 24px 0 32px;
+    }
+    
+    .pagination {
+        display: inline-block;
+        padding: 8px 0;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .page-header {
+        background-color: #FFF;
+        border-bottom: 1px solid var(--color-line);
+        border-radius: 3px 3px 0 0;
+        //height: 64px;
+        padding: 16px 20px 12px 24px;
+        h1 {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 600;
+            margin: 0;
+            color: var(--color-typo-primary);
+            margin-bottom: 4px;
+        }
+    }
+    
+    .data-list__border-mask {
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    
+    .handlebar-zone {
+        position: fixed;
+        right: 0;
+        top: 56px;
+        z-index: 100;
+    }
+    
+    .breadcrumbs {
+        display: flex;
+        margin-bottom: 4px;
+    }
+    
+    .breadcrumb {
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0;
+        color: #666;
+    }
+    
+    .breadcrumb__arrow {
+        width: 16px;
+        height: 16px;
+        margin-top: 3px;
+        margin-right: 2px;
+        svg {
+            fill: #666;
+        }
+    }

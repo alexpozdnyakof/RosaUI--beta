@@ -1,0 +1,13 @@
+label {
+    letter-spacing: 0;
+    color: var(--color-typo-primary);
+    font-size: var(--size-typo-m);
+    line-height: var(--line-height-typo-s);
+    font-weight: 600;
+    // margin-bottom: 8px;
+    display: inline-block;
+    width: 100%;
+    &.disabled {
+        opacity: .5;
+    }
+}

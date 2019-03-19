@@ -1,0 +1,28 @@
+.hint {
+    letter-spacing: 0.1px;
+    font-size: var(--size-typo-xs);
+    line-height: 16px;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+}
+
+.state_default {
+    color: #76767c;
+}
+
+.state_error {
+    color: var(--color-alert);
+}
+
+.state_success {
+    color: var(--color-success);
+}
+
+.state_warning {
+    color: var(--color-warning);
+}
+
+.state_dark {
+    border: 1px solid var(--color-typo-secondary) !important;
+}

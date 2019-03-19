@@ -1,0 +1,23 @@
+.kanban-wrapper
+  .kanban-header
+    h1 Командный спринт 13 февр. – 24 февр.
+  .kanban-workspace
+    .workspace-section('cdkDropList' '#backlogList'="cdkDropList" '[cdkDropListData]'="backlog" '[cdkDropListConnectedTo]'="[doneList]" '(cdkDropListDropped)'="onDrop($event)")
+      .kanban-workspace_header
+        span Выполняются
+      rosa-card(class="padding-8")
+        .card_create-task Добавить задачу
+      rosa-card('cdkDrag' class="width_320_fix" '*ngFor'="let todo of backlog")
+        rosa-task('[description]'="todo?.description", '[duedate]'="todo?.duedate", '[title]'="todo?.title" class="inner-task")
+
+    .workspace-section('cdkDropList' '#doneList'="cdkDropList" '[cdkDropListData]'="completed" '[cdkDropListConnectedTo]'="[backlogList, blockedList]" '(cdkDropListDropped)'="onDrop($event)")
+      .kanban-workspace_header
+        span Бэклог задач
+      rosa-card('cdkDrag' class="width_320_fix" '*ngFor'="let todo of completed")
+        rosa-task('[description]'="todo?.description", '[duedate]'="todo?.duedate", '[title]'="todo?.title" class="inner-task")
+
+    .workspace-section('cdkDropList' '#blockedList'="cdkDropList" '[cdkDropListData]'="blocked" '[cdkDropListConnectedTo]'="doneList" '(cdkDropListDropped)'="onDrop($event)")
+      .kanban-workspace_header
+        span Блокированные задачи 
+      rosa-card('cdkDrag' class="width_320_fix" '*ngFor'="let todo of blocked")
+        rosa-task('[description]'="todo?.description", '[duedate]'="todo?.duedate", '[title]'="todo?.title" class="inner-task")

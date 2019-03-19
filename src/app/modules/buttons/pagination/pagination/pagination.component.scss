@@ -1,0 +1,27 @@
+@import 'mixins';
+@import 'grid';
+.pagination__button {
+    @include button-reset;
+    background-color: #FFF;
+    border-radius: 3px;
+    height: 32px;
+    padding: 0px 12px;
+    margin-right: 2px;
+    font-size: var(--size-typo-m);
+    color: var(--color-typo-secondary);
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    outline: none !important;
+    &:hover {
+        background-color: #f2f2f2;
+    }
+    &:focus,
+     :active {
+        outline: none !important;
+    }
+    &_active {
+        background-color: #ebebeb;
+        // color: var(--color-typo-primary);
+    }
+}

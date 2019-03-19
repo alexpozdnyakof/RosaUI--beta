@@ -1,0 +1,9 @@
+.checkbox__container
+    input(type="checkbox" class="checkbox__input" '[value]'="value" '[name]'="name"  '[id]'="index" '[formControl]'="controlOptions" '(blur)' = "onTouched()" '(change)'="onChange($event.target.value)" #checkbox)
+    .checkbox__label
+        label('[for]'="index" '[ngClass]'="{'label__medium': labelWeight == 'medium'}")
+            span
+                ng-content(select="[checkbox-group=label]")
+        span.helper
+            ng-content(select="[checkbox-group=helper]")
+

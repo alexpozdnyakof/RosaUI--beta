@@ -1,0 +1,36 @@
+.form-group {
+    width: 100%;
+    position: relative;
+}
+
+.size-default {
+    margin-bottom: 24px;
+}
+
+.size-submit {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    .form-group__label {
+        display: none;
+    }
+}
+
+.form-group__label {
+    margin-bottom: 8px;
+}
+
+.form-group__control {
+    position: relative;
+}
+
+.form-group__hint {
+    margin-top: 4px;
+}
+
+.form-group_group {
+    display: flex;
+    // TODO change selector to universal
+    rosa-radio {
+        padding-right: 16px;
+    }
+}

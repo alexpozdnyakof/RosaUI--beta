@@ -1,0 +1,18 @@
+.rosa-card {
+    width: 100% !important;
+    position: relative;
+    cursor: move;
+    display: inline-flex;
+    box-shadow: 0 1px 3px rgba(27, 27, 27, .15);
+    border-radius: 4px;
+    padding: 16px 20px;
+    background-color: #FFF;
+    border: 1px solid transparent;
+    transition: box-shadow 100ms, transform 100ms, opacity 100ms, border-color 100ms;
+    &:hover {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .10);
+        opacity: 0.8;
+        border-color: rgba(70, 70, 72, .4);
+        transition: box-shadow 100ms, transform 100ms, opacity 100ms, border-color 100ms;
+    }
+}

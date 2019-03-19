@@ -1,0 +1,27 @@
+rosa-header
+    rosa-top(header-type="rosa-header-top")
+        rosa-nav(top-zone="top-nav", '[link]'="'/loans'") Кредиты
+        rosa-nav(top-zone="top-nav", '[link]'="'/crm'") Продажи
+        rosa-nav(top-zone="top-nav", '[link]'="'/datatables'") Отчеты
+        rosa-nav(top-zone="top-nav", '[link]'="'/managers'") Сотрудники
+        rosa-nav(top-zone="top-nav", '[link]'="'/kanban'") Проекты
+    rosa-sub(header-type="rosa-header-sub")
+.main-wrapper
+    //.main-sidebar
+        rosa-sidebar
+            rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+                .sidebar_title(side-item-role="button") Списки проспектов
+            rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+                rosa-sidebar-button(side-item-role="button" ) Мой портфель
+            rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+                rosa-sidebar-button(side-item-role="button") Избранное
+            rosa-sidebar-item(sidebar-role="rosa-sidebar-nav" '*ngIf'="(groups$ | async) as groups;")
+                rosa-sidebar-button(side-item-role="button") Списки проспектов
+                rosa-sidebar-link(side-item-role="sub", '*ngFor'="let group of groups") {{group.name}}
+            rosa-sidebar-item(sidebar-role="rosa-sidebar-nav")
+                rosa-sidebar-button(side-item-role="button") Архивированные
+    .main-content
+        router-outlet
+
+.sidebar-outlet
+  router-outlet(name="handlebar")
